@@ -1,0 +1,54 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="scatter/style.css">
+    </head>
+    <body>
+        <div id="container">
+            <div id="legend">
+                <div class="legend-container">
+                    <div class="legend-color"></div>
+                    <div class="legend-label"></div>
+                </div>
+                <div class="legend-container">
+                    <div class="legend-color"></div>
+                    <div class="legend-label"></div>
+                </div>
+                <div class="legend-container">
+                    <div class="legend-color"></div>
+                    <div class="legend-label"></div>
+                </div>
+                <div class="legend-container">
+                    <div class="legend-color"></div>
+                    <div class="legend-label"></div>
+                </div>
+            </div>
+        </div>
+        <div id="controls">
+            <div class="control" id="control_dimension">
+                <div class="control-header">Dimens&atilde;o principal</div>
+                <div class="control-select">
+                    <select id="dimension-select">
+                        <option value=0>Utilidade</option>
+                        <option value=1>Origem</option>
+                        <option value=2>Altitude</option>
+                    </select>
+                    <div class="select-arrow"></div>
+                </div>
+            </div>
+            <div class="control" id="control_utility">
+                <div class="control-header">Utilidade</div>
+                <div class="control-list"></div>
+            </div>
+            <div class="control" id="control_owner">
+                <div class="control-header">Origem</div>
+                <div class="control-list"></div>
+            </div>
+            <div class="control" id="control_altitude">
+                <div class="control-header">Altitude</div>
+                <div class="control-list"></div>
+            </div>
+        </div>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.3.0/d3.min.js"></script>
+        <script type="module" src="scatter/script.js"></script>
+    </body>
+</html>
