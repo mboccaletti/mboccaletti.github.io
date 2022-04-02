@@ -85,7 +85,7 @@ function renderScatter() {
     }
 
     scatterGeo.setAttribute('position', new THREE.Float32BufferAttribute(scatterPositions, 3));
-    scatterGeo.setAttribute( 'color', new THREE.Float32BufferAttribute(scatterColors, 3));
+    scatterGeo.setAttribute('color', new THREE.Float32BufferAttribute(scatterColors, 3));
 
     scatterGeo.computeBoundingSphere();
 
@@ -158,7 +158,7 @@ function render() {
 /* ----- Camera ----- */
 const frustumSize = 5;
 var camera = new THREE.OrthographicCamera(frustumSize * aspect / -2, frustumSize * aspect / 2, frustumSize / 2, frustumSize / -2, 0.1, 60000);
-camera.position.set(3, 1, 5);
+camera.position.set(300, 100, 500);
 //camera.position.set(0, 4, 0);
 camera.lookAt(earthMesh.position);
 
@@ -176,7 +176,7 @@ function redraw() {
 
 /* ----- Scene ----- */
 scene.add(light);
-scene.add(axesHelper);
+//scene.add(axesHelper);
 scene.add(earthMesh);
 
 controls.addEventListener("change", redraw);

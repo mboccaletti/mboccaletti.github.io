@@ -1,0 +1,231 @@
+body {
+    margin: 0;
+    font-family: "Droid Sans", sans-serif;
+    color: rgb(224, 224, 224);
+    background-color: #202124;
+    font-size: 14px;
+}
+
+p {
+    margin: 0;
+}
+
+
+#container {
+    width: 80%;
+    height: 615px;
+    padding: 12px;
+}
+
+/* ----- Canvas ----- */
+#map {
+    margin: 12px 0;
+}
+
+.container {
+    display: block;
+    width: 100%;
+    position: relative;
+    touch-action: none;
+}
+
+.container canvas {
+    border-radius: 4px;
+    border: rgb(60, 64, 67) 1px solid;
+}
+
+#three canvas {
+    cursor: move; /* fallback if grab cursor is unsupported */
+    cursor: grab;
+    cursor: -moz-grab;
+    cursor: -webkit-grab;
+}
+
+ /* (Optional) Apply a "closed-hand" cursor during drag operation. */
+#three canvas:active {
+    cursor: grabbing;
+    cursor: -moz-grabbing;
+    cursor: -webkit-grabbing;
+}
+
+
+/* ----- Controls ----- */
+
+#controls {
+    position: absolute;
+    width: 17%;
+    top: 0;
+    right: 1%;
+}
+
+.control {
+    margin-top: 13px;
+    border: rgb(60, 64, 67) 1px solid;
+    border-radius: 4px;
+    padding: 0;
+    background-color: rgb(44, 47, 56);
+}
+
+.control-header {
+    padding: 8px 16px;
+    font-weight: 700;
+    background-color: rgb(38, 50, 56);
+    cursor: default;
+}
+
+.control-select {
+    position: relative;
+    display: inline-block;
+    width:100%;
+}
+
+.control-select select {
+    display: inline-block;
+    width:100%;
+    cursor: pointer;
+    padding: 10px 18px;
+    outline: 0;
+    border: 0;
+    /* border-radius: 0; */
+    background-color: rgb(44, 47, 56);
+    color:rgb(224, 224, 224);
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+.control-select select::-ms-expand {
+    display: none;
+}
+
+.control-select select:hover,
+.control-select select:focus {
+    background-color: rgb(60, 64, 67);
+}
+
+      
+.select-arrow {
+    position: absolute;
+    top: 16px;
+    right: 15px;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+    border-style: solid;
+    border-width: 5px 3px 0 3px;
+    border-color: rgb(224, 224, 224) transparent transparent transparent;
+}
+
+.control-list {
+    padding: 5px 16px 8px;
+    max-height: 160px;
+    overflow-y: auto;
+    font-size: 12px;
+}
+
+.checkbox-container {
+    position: relative;
+    cursor: pointer;
+    display: block;
+    padding: 8px 0 8px 30px;
+}
+
+/* Hide default checkbox */
+.checkbox-container input {
+    position: absolute;
+    cursor: pointer;
+    opacity: 0;
+    height: 0;
+    width: 0;
+}
+
+/* Custom checkbox */
+.checkmark {
+    position: absolute;
+    top: 5px;
+    left: 0;
+    height: 16px;
+    width: 16px;
+    border:rgb(224, 224, 224) 2px solid;
+    border-radius: 2px;
+}
+
+/* Quando o checkbox é clicado, adicionar um fundo rosa */
+.checkbox-container:hover input ~ .checkmark {
+    border-color:rgb(239, 239, 239);
+}
+
+/* Quando o checkbox é clicado, adicionar um fundo rosa */
+.checkbox-container input:checked ~ .checkmark {
+    background-color: rgb(38, 50, 56);
+    border-color: rgb(44, 47, 56);
+    
+}
+
+.checkbox-container .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+    left: 5px;
+    top: 2px;
+    width: 4px;
+    height: 8px;
+    border: solid rgb(239, 239, 239);
+    border-width: 0 2px 2px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+
+/* Exibir o ícone quando selecionado */
+.checkbox-container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+
+/* Slider */
+.slider-container {
+    padding: 12px 16px;
+    font-family: "Open Sans";
+    font-size: 13px;
+    -webkit-font-smoothing: antialiased;
+}
+
+.slider-input {
+    margin: 10px 3%;
+    -webkit-appearance: none;
+    width: 94%;
+    height: 2px;
+    background: #808288;
+    outline: none;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+  
+.slider-input:hover {
+    opacity: 1;
+}
+  
+.slider-input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    background: #fff;
+}
+  
+.slider-input::-moz-range-thumb {
+    width: 10px;
+    height: 10px;
+    background: #fff;
+}
+
+.slider-input::-webkit-slider-thumb:hover {
+    outline: 4px solid;
+}
+
+.slider-input::-moz-range-thumb:hover {
+    outline: 4px solid;
+}

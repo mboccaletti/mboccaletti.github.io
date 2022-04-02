@@ -1,0 +1,69 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="ground_track/style.css">
+        <meta charset="UTF-8"/>
+    </head>
+    <body>
+        <div id="container">
+            <div class="container" id="three"></div>
+            <div class="container">
+                <canvas width="600" id="map"></canvas>
+            </div>
+        </div>
+        <div id="controls">
+            <div class="control" id="control_dimension">
+                <div class="control-header">Objeto</div>
+                <div class="control-select">
+                    <select id="object-select">
+                        <option value=0>selecione</option>
+                    </select>
+                    <div class="select-arrow"></div>
+                </div>
+            </div>
+            <div class="control">
+                <div class="slider-container">
+                    <div class="slider-title">Velocidade da simulação</div>
+                    <input class="slider-input" type="range" min="1" max="1000" value="500" id="simulationSpeed">
+                    <div class="slider-value" value="{value}x">500x</div>
+                </div>
+            </div>
+            <div class="control">
+                <div class="slider-container">
+                    <div class="slider-title">Excentricidade</div>
+                    <input class="slider-input" type="range" min="0.0" max="0.99" value="0.3" step="0.001" id="eccentricity">
+                    <div class="slider-value" value="{value}">0.3</div>
+                </div>
+            </div>
+            <div class="control">
+                <div class="slider-container">
+                    <div class="slider-title">Altitude do perigeu</div>
+                    <input class="slider-input" type="range" min="200" max="40000" value="480" id="altitudeOfPerigee">
+                    <div class="slider-value" value="{value} km">480 km</div>
+                </div>
+            </div>
+            <div class="control">
+                <div class="slider-container">
+                    <div class="slider-title">Asc. reta do nodo ascendente</div>
+                    <input class="slider-input" type="range" min="0" max="360" value="65" id="raan">
+                    <div class="slider-value" value="{value}&#176;">65&#176;</div>
+                </div>
+            </div>
+            <div class="control">
+                <div class="slider-container">
+                    <div class="slider-title">Inclinação</div>
+                    <input class="slider-input" type="range" min="0" max="180" value="45" id="inclination">
+                    <div class="slider-value" value="{value}&#176;">45&#176;</div>
+                </div>
+            </div>
+            <div class="control">
+                <div class="slider-container">
+                    <div class="slider-title">Argumento do perigeu</div>
+                    <input class="slider-input" type="range" min="0" max="360" value="270" id="aop">
+                    <div class="slider-value" value="{value}&#176;">270&#176;</div>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.3.0/d3.min.js"></script>
+        <script type="module" src="ground_track/script.js"></script>
+    </body>
+</html>
